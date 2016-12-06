@@ -117,7 +117,7 @@ int main() {
 	std::cout << "The sum of sectors is: " << std::to_string(sum) << std::endl;
 
 	//Neutralize anything that does't contain the target word
-	part2 << < values.size(), 1 >> > (d_hashes,
+	part2 << < 1 + (values.size() / 32), 32 >> > (d_hashes,
 		thrust::raw_pointer_cast(d_values.data()),
 		thrust::raw_pointer_cast(d_limits.data()),
 		d_checksums,
